@@ -96,7 +96,9 @@ cd tag/gridfieldsclib-0.7
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--with-netcdf-include=/usr/include \
+	--with-netcdf-libdir=%{_libdir}
 %{__make}
 
 cd ../pygridfields-0.7
