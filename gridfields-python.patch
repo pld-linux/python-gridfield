@@ -1,0 +1,41 @@
+--- tag/pygridfields-0.7/gridfield/core.i.orig	2012-02-13 17:46:52.000000000 +0100
++++ tag/pygridfields-0.7/gridfield/core.i	2014-05-17 08:47:01.955987327 +0200
+@@ -50,6 +50,7 @@
+ extern "C" { 
+ #include "elio.h"
+ }
++using namespace GF;
+ %}
+ 
+ %include typemaps.i
+@@ -58,6 +58,8 @@
+ %include "cpointer.i"
+ 
+ 
++namespace __gnu_cxx {
++};
+ 
+ %pointer_cast(AbstractCellArray * , CellArray *, castToCellArray)
+ namespace std {
+--- tag/pygridfields-0.7/clib/src/config.h.orig	1970-01-01 01:00:00.000000000 +0100
++++ tag/pygridfields-0.7/clib/src/config.h	2014-05-17 09:07:33.345961661 +0200
+@@ -0,0 +1 @@
++
+--- tag/pygridfields-0.7/clib/src/fparser.hh.orig	2012-02-13 17:46:58.000000000 +0100
++++ tag/pygridfields-0.7/clib/src/fparser.hh	2014-05-17 14:46:56.765537225 +0200
+@@ -17,6 +17,8 @@
+ #include <iostream>
+ #endif
+ 
++namespace GF {
++
+ class FunctionParser
+ {
+ public:
+@@ -154,4 +156,6 @@
+     void MakeTree(void*) const;
+ };
+ 
++}
++
+ #endif
