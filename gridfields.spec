@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	GridFields - wygodne operacje algebraiczne na tablicach bez s
 Name:		gridfields
 %define	snap	20140423
 Version:	1.0.3
-Release:	0.%{snap}.1
+Release:	0.%{snap}.2
 # project page says "MIT", but included spec and COPYING say LGPL v2+
 License:	LGPL v2+
 Group:		Libraries
