@@ -1,9 +1,10 @@
+%define	rel		2
+%define	snap	20140423
 Summary:	GridFields - convenient, algebraic manipulation of unstructured grids
 Summary(pl.UTF-8):	GridFields - wygodne operacje algebraiczne na tablicach bez struktury
 Name:		gridfields
-%define	snap	20140423
 Version:	1.0.3
-Release:	0.%{snap}.2
+Release:	0.%{snap}.%{rel}
 # project page says "MIT", but included spec and COPYING say LGPL v2+
 License:	LGPL v2+
 Group:		Libraries
@@ -22,8 +23,8 @@ BuildRequires:	autoconf >= 2.68
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.5
-BuildRequires:	netcdf-devel >= 4
 BuildRequires:	netcdf-cxx-devel >= 4
+BuildRequires:	netcdf-devel >= 4
 BuildRequires:	python-devel >= 1:2.4
 BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:	swig-python >= 1.3
@@ -43,8 +44,8 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki GridFields
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	libstdc++-devel
-Requires:	netcdf-devel >= 4
 Requires:	netcdf-cxx-devel >= 4
+Requires:	netcdf-devel >= 4
 
 %description devel
 Header files for GridFields library.
@@ -97,7 +98,7 @@ cd tag/gridfieldsclib-0.7
 %{__autoheader}
 %{__automake}
 %configure \
-	--with-netcdf-include=/usr/include \
+	--with-netcdf-include=%{_includedir} \
 	--with-netcdf-libdir=%{_libdir}
 %{__make}
 
