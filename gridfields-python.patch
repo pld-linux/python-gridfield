@@ -39,3 +39,24 @@
 +}
 +
  #endif
+--- tag/pygridfields-0.7/gridfield/core.i.orig	2016-03-24 22:19:18.700399277 +0100
++++ tag/pygridfields-0.7/gridfield/core.i	2016-03-25 16:41:43.760956766 +0100
+@@ -234,8 +234,8 @@
+   $1 = (UnTypedPtr) $input;
+ }
+ 
+-# any python object can be handled as an UnTypedPtr
+-# but ints and floats and such should have precedence
++// any python object can be handled as an UnTypedPtr
++// but ints and floats and such should have precedence
+ %typecheck(2000) UnTypedPtr {
+   $1 = true;
+ }
+@@ -335,7 +335,6 @@
+ %template(floatunion) Aggregate::setunion<float>;
+ %template(intmember) Assign::memberof<int>;
+ %template(floatmember) Assign::memberof<float>;
+-#%include "subapply.h";
+ %include "merge.h";
+ %include "sift.h";
+ %include "type.h";
