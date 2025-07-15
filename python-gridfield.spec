@@ -37,7 +37,7 @@ Ten pakiet zawiera bibliotekę dla Pythona.
 %prep
 %setup -q -n gridfields-%{gitref}
 cd pygridfields
-%patch0 -p2
+%patch -P0 -p2
 
 %build
 cd pygridfields
